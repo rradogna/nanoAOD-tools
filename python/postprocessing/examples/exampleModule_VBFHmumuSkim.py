@@ -78,7 +78,7 @@ class exampleProducer(Module):
                 dijetSelectionVBF = True
         
         self.out.fillBranch("EventMass",eventSum.M())
-        return dimuonSelection*dimuonSelectionH and dijetSelection and dijetSelectionVBF
+        return dimuonSelection and dimuonSelectionH and dijetSelection and dijetSelectionVBF
 
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
