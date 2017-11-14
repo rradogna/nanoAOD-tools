@@ -42,11 +42,13 @@ class exampleProducer(Module):
             return False
         for lep in muons :
             eventSum += lep.p4()
+            #print 'lep pt='+repr(lep.pt)+' lep charge='+repr(lep.charge)+' lep pfRelIso04_all='+repr(lep.pfRelIso04_all)+' lep pdgId='+repr(lep.pdgId)
             if lep.pfRelIso04_all<0.25 and abs(lep.pdgId)==13:
-                #print 'lep1 pt={0} and lep1 charge={1}'.format(lep.pt,lep.charge)
+                #print 'here'
                 if count_mu == 1 and (lep.charge*mu1_charge)<0:
                     mu2 = lep.p4()
                     dimuonSelection = True
+                #print 'dimuonSel'
                 if count_mu == 0:
                     #mu1.SetPtEtaPhiM(lep.pt,lep.eta, lep.phi, 0.105)
                     mu1 = lep.p4()
@@ -56,6 +58,7 @@ class exampleProducer(Module):
             dimuon = mu1 + mu2
             if dimuon.M()>90:
                 dimuonSelectionH = True
+        #print 'dimuonSelH'
         #for lep in electrons :
         #    eventSum += lep.p4()
         if len(filter(self.jetSel,jets)) < 2:
@@ -75,7 +78,7 @@ class exampleProducer(Module):
                 dijetSelectionVBF = True
         
         self.out.fillBranch("EventMass",eventSum.M())
-        return dimuonSelection and dimuonSelectionH and dijetSelection and dijetSelectionVBF
+        return dimuonSelection*dimuonSelectionH and dijetSelection and dijetSelectionVBF
 
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
