@@ -1,0 +1,121 @@
+# this is a comment
+#keep * # start with all
+drop *
+
+# Event #
+keep genWeight
+#isData 
+#xsec 
+#json 
+#json_silver
+# EX_MUON
+keep luminosityBlock 
+# lumi
+keep event
+keep run 
+
+#rho*
+keep LHE*
+#lhe*
+keep nLHE*
+
+
+# Pileup & PV #
+keep Pileup_nTrueInt #keep nTrueInt
+keep Pileup_nPU #keep nPU0
+keep PV_npvs #keep nPVs
+#puWeight*
+
+# Jets #
+keep nJet
+keep Jet_pt
+keep Jet_eta
+keep Jet_phi
+keep Jet_mass
+keep Jet_btagCSVV2  #keep Jet_btagCSV
+keep Jet_btagCMVA
+# Jet_blike_VBF 
+keep Jet_jetId
+keep Jet_puId
+keep Jet_qgl
+#Jet_corr*
+#Jet_leadTrackPt
+#Jet_pt*
+#btagWeight*
+#Jet_ptd
+#Jet_axis2
+#Jet_mult
+keep Jet_*Flavour
+#Jet_mcMatchId
+#Jet_mc*
+#Jet_rawPt
+keep *SoftActivity*
+#nsoftActivityEWKJets
+#softActivityEWKJets
+
+
+# MET #
+keep MET_pt
+keep MET_phi
+keep MET_sumEt
+#met_shifted_JetEnUp_pt
+#met_shifted_JetEnDown_pt
+
+# HLT #
+keep TrigObj_filterBits
+#HLT_BIT_HLT_DiPFJetAve60*
+#HLT_BIT_HLT_DiPFJetAve40*
+#HLT_BIT_HLT_L1_TripleJet_VBF*
+#HLT_BIT_HLT_QuadPFJet_VBF*
+#HLT_BIT_HLT_IsoMu22*
+#HLT_BIT_HLT_IsoMu22_eta2p1*
+#HLT_BIT_HLT_IsoTkMu22*
+#HLT_BIT_HLT_IsoMu24*
+#HLT_BIT_HLT_IsoTkMu24*
+#HLT_BIT_HLT_IsoMu27*
+#HLT_BIT_HLT_IsoTkMu27*
+#HLT_BIT_HLT_Mu24_eta2p1*
+#HLT_BIT_HLT_TkMu24_eta2p1*
+#HLT_BIT_HLT_Ele27_eta2p1_WPLoose_Gsf*
+#HLT_BIT_HLT_Ele27_eta2p1_WPTight_Gsf_v*
+#HLT_BIT_HLT_Ele27_WPLoose_Gsf_v*
+#HLT_BIT_HLT_Ele25*
+#HLT_BIT_HLT_Ele27*
+#HLT_BIT_HLT_*Ele*Ele*
+#HLT_BIT_HLT_DoubleEle*
+#HLT_BIT_HLT_*Mu*Mu*
+
+# Gen #
+keep nGenPart
+keep GenPart_*
+keep nGenJet
+keep GenJet_*
+#V_*
+#nGenVbosons
+#GenVbosons_pt
+#GenVbosons_eta
+#GenVbosons_phi
+#GenVbosons_mass
+#GenVbosons_pdgId
+#GenJet_pt
+#GenJet_eta
+#GenJet_phi
+#GenJet_mass
+#nGenLep
+#GenLep_pt
+#GenLep_eta
+#GenLep_phi
+#GenLep_mass
+#GenLep_pdgId
+
+# ??
+#*vLeptons*
+#*selLeptons*
+#Vtype
+#VtypeSim
+
+# other examples #
+#drop HLT_* 
+#keepmatch HLT_(Iso)?Mu\d+
+#drop *_cleanmask
+#dropmatch FatJet_tau[12]
